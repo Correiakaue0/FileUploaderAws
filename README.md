@@ -39,6 +39,7 @@ AWS_ACCESS_KEY=SEU_ACCESS_KEY
 AWS_SECRET_KEY=SEU_SECRET_KEY
 AWS_REGION=us-east-1
 AWS_BUCKET_NAME=nome-do-seu-bucket
+```
 
 Kauê Correia
 Desenvolvedor Back-End | C# • SQL • AWS
