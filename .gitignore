@@ -1,0 +1,63 @@
+## Compiled source #
+bin/
+obj/
+out/
+.vs/
+
+## User-specific files #
+.vscode/
+
+## Build results #
+*.dll
+*.exe
+*.app
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.dbmdl
+
+## OS generated files #
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+## Visual Studio Code #
+.vscode/
+
+## Rider #
+.idea/
+
+## ASP.NET Core secrets #
+secrets.json
+
+## Configuration files (optional, para forçar uso de env vars) #
+appsettings.Development.json
+appsettings.Local.json
+
+## NuGet packages #
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+## Entity Framework Core migrations cache #
+Migrations/*.Designer.cs
+Migrations/*Snapshot.cs
+
+## Logs and diagnostics #
+*.log
+logs/
+*.tlog
+
+## Test results #
+TestResults/
+*.trx
+*.coverage
+*.testsettings
+
+## Publish folder #
+publish/
