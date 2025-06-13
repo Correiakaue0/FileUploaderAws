@@ -23,8 +23,7 @@ Este projeto é uma API desenvolvida em **.NET 9** com padrão **DDD (Domain-Dri
 ```
 📁 Core/
 │
-├── Api/ → Camada de apresentação (controllers, Program.cs)
-├── Application/ → 
+├── Api/ → Controllers e Program.cs
 ├── Domain/ → Interfaces, configuração de conexão, modelos e regras de negócio
 └── Infrastructure/ → Conexão com AWS S3 e repositorios
 ```
