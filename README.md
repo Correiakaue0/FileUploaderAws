@@ -20,12 +20,14 @@ Este projeto é uma API desenvolvida em **.NET 9** com padrão **DDD (Domain-Dri
 
 ## 🧱 Estrutura do Projeto
 
+```
 📁 Core/
 │
 ├── Api/ → Camada de apresentação (controllers, Program.cs)
 ├── Application/ → 
 ├── Domain/ → Interfaces, configuração de conexão, modelos e regras de negócio
 └── Infrastructure/ → Conexão com AWS S3 e repositorios
+```
 
 ---
 
