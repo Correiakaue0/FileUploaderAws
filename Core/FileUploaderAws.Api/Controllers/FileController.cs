@@ -13,8 +13,7 @@ public class FileController(IS3FileService sservice) : ControllerBase
     [HttpPost("uploadImage")]
     public async Task<IActionResult> UploadImage([FromForm] IFormFile file)
     {
-        if (file == null || file.Length == 0)
-            return BadRequest("Imagem inválida.");
+        if (file == null || file.Length == 0) return BadRequest("Imagem inválida.");
 
         var uploaded = await _service.UploadImageAsync(file);
         return Ok(uploaded);
@@ -23,8 +22,7 @@ public class FileController(IS3FileService sservice) : ControllerBase
     [HttpPost("uploadArchive")]
     public async Task<IActionResult> UploadArchive([FromForm] IFormFile file)
     {
-        if (file == null || file.Length == 0)
-            return BadRequest("Arquivo inválido.");
+        if (file == null || file.Length == 0) return BadRequest("Arquivo inválido.");
 
         var uploaded = await _service.UploadArchiveAsync(file);
         return Ok(uploaded);
