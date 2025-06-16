@@ -4,12 +4,14 @@ using FileUploaderAws.Domain.Interfaces.Repositories;
 using FileUploaderAws.Domain.Models;
 using FileUploaderAws.Infrastructure.AWS;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace FileUploaderAws.Infrastructure.Repositories;
 
-public class S3FileRepository(AwsConnectionFactory connectionFactory) : IS3FileRepository
+public class S3FileRepository(AwsConnectionFactory connectionFactory, ILogger<S3FileRepository> logger) : IS3FileRepository
 {
     private readonly AwsConnectionFactory _connectionFactory = connectionFactory;
+    private readonly ILogger<S3FileRepository> _logger = logger;
 
     public async Task<UploadedFile> UploadAsync(IFormFile file)
     {
@@ -28,6 +30,8 @@ public class S3FileRepository(AwsConnectionFactory connectionFactory) : IS3FileR
 
         await transferUtility.UploadAsync(transferUtilityUploadRequest);
 
+        _logger.LogInformation("Upload de arquivo na s3", DateTime.Now);
+
         var url = $"https://{AwsConnectionConfiguration.BucketName}.s3.amazonaws.com/{key}";
         return new UploadedFile(key, file.FileName, url);
     }
@@ -40,6 +44,8 @@ public class S3FileRepository(AwsConnectionFactory connectionFactory) : IS3FileR
 
         var fileName = Path.GetFileName(key);
         var contentType = response.Headers.ContentType ?? "application/octet-stream";
+
+        _logger.LogInformation("Download de arquivo da s3", DateTime.Now);
 
         return (response.ResponseStream, contentType, fileName);
     }
