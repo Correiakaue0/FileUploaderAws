@@ -41,5 +41,4 @@ AWS_REGION=us-east-1
 AWS_BUCKET_NAME=nome-do-seu-bucket
 ```
 
-Kauê Correia
-Desenvolvedor Back-End | C# • SQL • AWS
+Desenvolvido por Kauê Correia
